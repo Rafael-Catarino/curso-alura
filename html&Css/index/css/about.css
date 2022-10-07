@@ -1,0 +1,39 @@
+.about-barbershop {
+  background-color: #fefefe;
+  padding: 20px;
+  margin: auto;
+  width: 67%;
+}
+
+.about-barbershop h3 {
+  font-size: 2em;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.about-barbershop img {
+  border-radius: 10px;
+  float: left;
+  margin-right: 10px;
+  width: 100px;
+}
+
+.about-barbershop__p {
+  font-size: large;
+  padding-bottom: 10px;
+}
+
+.about-barbershop em strong {
+  color: #ff0000;
+}
+
+.about-barbershop__p:nth-child(2) {
+  font-size: 20px
+}
+
+@media (max-width: 670px) {
+  .about-barbershop {
+    width: 80%;
+  }
+}
