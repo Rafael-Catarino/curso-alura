@@ -1,0 +1,41 @@
+.products {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.products div {
+  text-align: center;
+  border: 1px solid black;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  border-radius: 10px;
+  margin: 50px 20px;
+  padding: 30px;
+  width: 220px;
+}
+
+.products div:hover {
+  border-color: #c78c19;
+  box-shadow: 2px 5px 10px black;
+  transform: scale(1.05);
+}
+
+.products div:active {
+  border-color: #088c19;
+}
+
+.products h2 {
+  font-size: 1.8em;
+}
+
+.products p {
+  height: 50px;
+}
+
+.preco {
+  margin-top: 5px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
