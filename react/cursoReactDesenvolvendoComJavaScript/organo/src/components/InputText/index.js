@@ -13,6 +13,7 @@ const InputText = (props) => {
       <input
         value={props.valor}
         placeholder={placeholderModificado}
+        required={props.required}
       />
     </div>
   )
