@@ -6,17 +6,6 @@ import "./Form.css";
 
 const Form = (props) => {
 
-  const times = [
-    '',
-    'Programação',
-    'Front-End',
-    'Data Sicience',
-    'Devops',
-    'UX e Design',
-    'Mobile',
-    'Inovação e Gestão'
-  ];
-
   const [nome, setNome] = useState('');
   const [cargo, setCargo] = useState('');
   const [imagem, setImagem] = useState('');
@@ -30,6 +19,10 @@ const Form = (props) => {
       imagem,
       time
     })
+    setCargo('');
+    setImagem('');
+    setNome('');
+    setTime('');
   }
 
   return (
@@ -62,7 +55,7 @@ const Form = (props) => {
 
         <SelectList 
         label='Times: '
-        itens={times}
+        itens={props.times}
         required={true}
         valor = {time}
         valueInputChange = {valor => setTime(valor)}
