@@ -1,17 +1,25 @@
 import fs from 'fs';
 import chalk from 'chalk';
 
+function extraiLinks (texto) {
+  const regex = /\[([^[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\)/gm;
+  const capturas = [...texto.matchAll(regex)];
+  const resultados = capturas.map(capitura => ({[capitura[1]]: capitura[2]}));
+  return resultados;
+}
+
 function trataErro(erro) {
-  console.log(erro);
   throw new Error(chalk.red(erro.code,'não há arquivos no dietório'));
 }
 
 //função assincrona utilizando o async/await.
-async function pegaArquivo(caminhoDoArquivo) {
+//async function pegaArquivo(caminhoDoArquivo) {
+//arrow async com async.
+const pegaArquivo = async (caminhoDoArquivo) => {
   try {
     const encoding = 'utf-8';
     const texto = await fs.promises.readFile(caminhoDoArquivo, encoding);
-    console.log(chalk.green(texto));
+    console.log(extraiLinks(texto));
   } catch (erro) {
     trataErro(erro);
   } finally {
