@@ -5,7 +5,7 @@ function extraiLinks (texto) {
   const regex = /\[([^[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\)/gm;
   const capturas = [...texto.matchAll(regex)];
   const resultados = capturas.map(capitura => ({[capitura[1]]: capitura[2]}));
-  return resultados;
+  return resultados.length !== 0 ? resultados : 'não há links no arquivo.';
 }
 
 function trataErro(erro) {
@@ -19,7 +19,7 @@ const pegaArquivo = async (caminhoDoArquivo) => {
   try {
     const encoding = 'utf-8';
     const texto = await fs.promises.readFile(caminhoDoArquivo, encoding);
-    console.log(extraiLinks(texto));
+    return extraiLinks(texto);
   } catch (erro) {
     trataErro(erro);
   } finally {
@@ -46,4 +46,4 @@ const pegaArquivo = async (caminhoDoArquivo) => {
   });
 } */
 
-pegaArquivo('./arquivos/texto.md');
+export default pegaArquivo;
