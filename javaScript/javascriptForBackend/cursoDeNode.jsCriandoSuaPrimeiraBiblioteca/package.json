@@ -1,0 +1,24 @@
+{
+  "name": "curso-de-node.js-criando-sua-primeira-biblioteca",
+  "version": "1.0.0",
+  "description": "curso de bibliotecas em JS com Node.js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cli" : "node ./src/cli.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rafael-Catarino/curso-alura.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rafael-Catarino/curso-alura/issues"
+  },
+  "homepage": "https://github.com/Rafael-Catarino/curso-alura#readme",
+  "dependencies": {
+    "chalk": "5.0.1"
+  }
+}
